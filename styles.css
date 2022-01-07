@@ -1,0 +1,202 @@
+:root {
+    --red-pink: rgb(180, 1, 70);
+    --off-white: rgba(255, 255, 255, 0.87);
+    --transparent-white: rgba(255, 255, 255, 0.404);
+    --dark-pink: rgb(165, 10, 82);
+    --dark-gray: rgb(26, 26, 26);
+    --white: rgba(255, 255, 255, 0.877);
+    --blue: rgb(78, 58, 167);
+    --very-dark-blue: rgb(39, 39, 80);
+    --orange: rgb(197, 86, 12);
+}
+html, body, h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+}
+html, body, #nav-bar, #nav-informations, header, figcaption, #show-all, #contact-informations, .nav-el, .contact-img, #contact-images, footer{
+    display: flex;
+}
+html, body {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+#nav-bar {
+    width: 100vw;
+    height: 3.5em;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 3%;
+    font-size: clamp(0.7em, 2vw, 1.45em);
+    background-color: var(--red-pink);
+    color: var(--white);
+}
+.nav-el {
+    height: 100%;
+    align-items: center;
+    padding: 0 0.5em;
+} 
+.nav-el:hover {
+    background-color: var(--blue);
+}
+#welcome-section {
+    color: var(--white);
+    background-color: var(--dark-gray);
+    width: 100vw;
+    height: 100vh;
+}
+header {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10em;
+    row-gap: 1em;
+}
+h1 {
+    font-size: clamp(1.2em, 4.5vw, 4em);
+}
+#main-header h2 {
+    font-size: clamp(0.9em, 2.5vw, 2.5em);
+    font-weight: 100;
+    font-style: italic;
+    color: var(--dark-pink);
+}
+#projects {
+    background-color: var(--blue);
+    padding-bottom: 5em;
+}
+
+#projects-header {
+    border-bottom: 1px solid white;
+    margin-bottom: 4em;
+    width: 90%;
+}
+#projects-header h2 {
+    font-size: clamp(1.3em, 3.5vw, 4em);
+    color: var(--white);
+}
+#all-images {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 90%;
+    row-gap: 1em;
+}
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+img {
+    width: 100%;
+    height: auto;
+}
+figure {
+    width: 100%;
+}
+figcaption {
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    background-color: var(--very-dark-blue);
+    font-size: clamp(0.8em, 3.5vw, 1.6em);
+    color: var(--off-white);
+    margin-top: -4px;
+}
+figcaption::before {
+    content: "<";
+    margin-right: 0.3em;
+}
+figcaption::after {
+    content: "/>";
+    margin-left: 0.3em; 
+}
+figcaption::before, figcaption::after{
+    opacity: 0;
+    color: var(--orange);
+    transition: .5s ease-in-out;
+}
+figcaption:hover::before, figcaption:hover::after {
+    opacity: 1;
+}
+#show-all {
+    margin-top: 2em;
+    color: var(--off-white);
+    padding: .5em 1em;
+    background-color: var(--very-dark-blue);
+    width: 5.2em;
+    align-items: center;
+    column-gap: .5em;
+    font-size: 1.1em;
+    transition: .5s ease-in-out;
+}
+#show-all::after {
+    content: ">";
+    font-weight: 900;
+    transition: .5s ease-in-out;
+}
+#show-all:hover::after {
+    transform: translateX(20%); 
+}
+a #show-all:hover {
+    background-color: var(--red-pink);
+}
+#contact-informations {
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--very-dark-blue);
+    width: 100vw;
+    color: var(--off-white);
+}
+h3 {
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+    font-size: clamp(1.2em, 4.5vw, 4em);
+}
+h4 {
+    font-size: clamp(0.6em, 2vw, 4em);
+    font-weight: 100;
+    font-style: italic;
+    color: var(--transparent-white);
+}
+.inner-img {
+    width: 2em;
+    height: auto;
+}
+.contact-img {
+    height: 2em;
+    align-items: center;
+    transition: .2s ease-in-out;
+}
+.contact-img:hover {
+    transform: translateY(30%);
+}
+#contact-images {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 3em;
+    padding-bottom: 2em;
+    border-bottom: 5px solid var(--dark-pink);
+    column-gap: 1em;
+}
+.signature {
+    white-space: nowrap;
+    font-size: clamp(0.8em, 2vw, 2em);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+footer {
+    width: 100vw;
+    background-color: var(--very-dark-blue);
+    justify-content: space-evenly;
+}
+p {
+    font-size: clamp(0.4em, 1.5vw, 3em);
+    font-weight: 100;
+    color: var(--transparent-white);
+}
+#projects-header, #all-images, figure, #show-all {
+    margin-inline: auto;
+}
+
+
