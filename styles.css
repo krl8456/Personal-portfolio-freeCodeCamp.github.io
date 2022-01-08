@@ -5,7 +5,7 @@
     --dark-pink: rgb(165, 10, 82);
     --dark-gray: rgb(26, 26, 26);
     --white: rgba(255, 255, 255, 0.877);
-    --blue: rgb(78, 58, 167);
+    --blue: rgb(81, 70, 131);
     --very-dark-blue: rgb(39, 39, 80);
     --orange: rgb(197, 86, 12);
 }
@@ -23,22 +23,29 @@ html, body {
     font-family: sans-serif;
     overflow-x: hidden;
 }
-#nav-bar {
+#navbar {
+    position: fixed;
+    top: 0;
     width: 100vw;
     height: 3.5em;
-    box-sizing: border-box;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding-right: 3%;
-    font-size: clamp(0.7em, 2vw, 1.45em);
+    font-size: clamp(0.5em, 2vw, 1.45em);
     background-color: var(--red-pink);
     color: var(--white);
+    z-index: 2;
+}
+main {
+    width: 100vw;
 }
 .nav-el {
     height: 100%;
     align-items: center;
     padding: 0 0.5em;
 } 
+#nav-informations {
+    height: 100%;
+    position: absolute;
+    right: 10%;
+}
 .nav-el:hover {
     background-color: var(--blue);
 }
@@ -149,7 +156,7 @@ a #show-all:hover {
     color: var(--off-white);
 }
 h3 {
-    margin-top: 1em;
+    margin-top: 3em;
     margin-bottom: 0.3em;
     font-size: clamp(1.2em, 4.5vw, 4em);
 }
@@ -158,9 +165,11 @@ h4 {
     font-weight: 100;
     font-style: italic;
     color: var(--transparent-white);
+    margin-bottom: 3em;
 }
 .inner-img {
-    width: 2em;
+    position: relative;
+    width: clamp(1em, 3vw, 3em);
     height: auto;
 }
 .contact-img {
@@ -181,9 +190,14 @@ h4 {
     column-gap: 1em;
 }
 .signature {
+    position: relative;
+    bottom: 0.3em;
     white-space: nowrap;
     font-size: clamp(0.8em, 2vw, 2em);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+figcaption {
+    font-size: clamp(0.8em, 2vw, 1.5em);
 }
 footer {
     width: 100vw;
@@ -198,5 +212,36 @@ p {
 #projects-header, #all-images, figure, #show-all {
     margin-inline: auto;
 }
-
-
+@media (min-width: 731px) {
+    #all-images {
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+        width: 800px;
+    }
+    .image {
+        position: relative;
+        height: 24em;
+    }
+    img, figcaption {
+        position: absolute;
+    }
+    img {
+        top: 0;
+        height: 20em;
+    }
+    figcaption {
+        bottom: 0;
+        width: 100%;
+        height: 3.2em;
+        font-size: clamp(1.4em, 2vw, 1.5em);
+    }
+}
+@media (min-width: 1092px) {
+    #all-images {
+        grid-template-columns: repeat(3, 1fr);
+        width: 1080px;
+    }
+    figcaption {
+        font-size: clamp(1.3em, 1.2vw, 1.45em);
+    }
+}
